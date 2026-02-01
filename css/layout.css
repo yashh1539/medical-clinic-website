@@ -1,0 +1,123 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+/* Header & Nav */
+.main-header {
+    background: var(--white);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main-nav a {
+    margin: 0 15px;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: var(--primary-blue);
+}
+
+/* Flexbox Row Utility */
+.flex-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.flex-row > div {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Grid Utility */
+.services-grid, .doctor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Footer */
+.main-footer {
+    background: #2d3436;
+    color: var(--white);
+    padding: 60px 0 20px;
+    margin-top: 80px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .section-padding { padding: 40px 0; }
+    .main-header { flex-direction: column; gap: 15px; text-align: center; }
+    h1 { font-size: 2rem; }
+}.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.hero-section {
+    padding: 60px 5%;
+    text-align: center;
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), 
+                url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1500&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.services-section {
+    padding: 80px 5%;
+    background: #f9f9f9;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.features-section {
+    padding: 80px 5%;
+}
+
+.features-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.cta-section {
+    background: #0056b3;
+    color: white;
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.main-footer {
+    padding: 40px 5%;
+    background: #333;
+    color: #eee;
+    text-align: center;
+}

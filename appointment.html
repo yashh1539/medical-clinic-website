@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book an Appointment | PrimeCare Health Clinic</title>
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+
+<body>
+
+<header class="main-header">
+  <div class="logo-area">
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Medical_cross.svg"
+      alt="Clinic Logo"
+      width="30"
+    />
+    <strong class="brand-name">PrimeCare Health Clinic</strong>
+  </div>
+
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="doctors.html">Our Doctors</a>
+    <a href="diagnostics.html">Diagnostics</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="form-hero">
+    <div class="container flex-row">
+      <div>
+        <h1>Book Your Consultation</h1>
+        <p>
+          Take the first step toward better health. Select your preferred
+          specialist and schedule a visit in under 2 minutes.
+        </p>
+      </div>
+
+      <div>
+        <img
+          src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80"
+          alt="Doctor consulting with patient"
+          class="rounded-img"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM SECTION -->
+  <section class="container section-padding">
+    <div class="booking-wrapper">
+
+      <!-- FORM CARD -->
+      <section class="form-card">
+        <form action="#" method="post" class="appointment-form">
+
+          <!-- PATIENT INFO -->
+          <fieldset class="form-section">
+            <legend class="form-heading">1. Patient Information</legend>
+
+            <div class="form-group">
+              <label for="patient-name">Full Name</label>
+              <input
+                type="text"
+                id="patient-name"
+                name="name"
+                placeholder="Enter patient's full name"
+                required
+              />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="+91 00000 00000"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address (Optional)</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="name@example.com"
+                />
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- VISIT DETAILS -->
+          <fieldset class="form-section">
+            <legend class="form-heading">2. Visit Details</legend>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="dept">Department</label>
+                <select id="dept" name="department">
+                  <option value="">Select Department</option>
+                  <option value="general">General Medicine</option>
+                  <option value="cardio">Cardiology</option>
+                  <option value="ortho">Orthopedics</option>
+                  <option value="pedia">Pediatrics</option>
+                  <option value="derma">Dermatology</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="doctor">Preferred Doctor</label>
+                <select id="doctor" name="doctor" required>
+                  <option value="">Choose a Specialist</option>
+                  <option value="amit">Dr. Amit Sharma</option>
+                  <option value="neha">Dr. Neha Verma</option>
+                  <option value="rajesh">Dr. Rajesh Iyer</option>
+                  <option value="anjali">Dr. Anjali Menon</option>
+                  <option value="vikram">Dr. Vikram Goel</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="date">Appointment Date</label>
+                <input type="date" id="date" name="date" required />
+              </div>
+
+              <div class="form-group">
+                <label for="time">Preferred Slot</label>
+                <select id="time" name="time_slot">
+                  <option value="morning">Morning (09:00–12:00)</option>
+                  <option value="afternoon">Afternoon (12:00–16:00)</option>
+                  <option value="evening">Evening (16:00–20:00)</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- NOTES -->
+          <fieldset class="form-section">
+            <legend class="form-heading">3. Additional Notes</legend>
+
+            <div class="form-group">
+              <label for="notes">Briefly describe your symptoms</label>
+              <textarea
+                id="notes"
+                name="message"
+                rows="3"
+                placeholder="Routine checkup, specific pain, etc."
+              ></textarea>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn btn-primary btn-large">
+            Confirm Booking
+          </button>
+
+          <p class="form-footer-note">
+            🔒 Your data is encrypted and secure.
+          </p>
+
+        </form>
+      </section>
+
+      <!-- SIDEBAR -->
+      <aside class="booking-sidebar">
+        <section class="info-card">
+          <img
+            src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=400&q=80"
+            alt="Clinic Interior"
+          />
+
+          <h4>Why Book With Us?</h4>
+
+          <ul class="benefit-list">
+            <li>Zero Waiting Time</li>
+            <li>Instant SMS Confirmation</li>
+            <li>Easy Rescheduling</li>
+            <li>Verified Specialists</li>
+          </ul>
+        </section>
+
+        <section class="emergency-contact">
+          <p>Need urgent assistance?</p>
+          <a href="tel:+919999999999" class="call-link">
+            📞 +91 99999 99999
+          </a>
+        </section>
+      </aside>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="main-footer">
+  <div class="container">
+    <p>&copy; 2026 PrimeCare Health Clinic. All rights reserved.</p>
+    <a href="privacy.html">Privacy Policy</a>
+  </div>
+</footer>
+
+</body>
+</html>

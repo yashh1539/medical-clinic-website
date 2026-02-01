@@ -1,0 +1,282 @@
+/* Buttons */
+.btn {
+    padding: 12px 24px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-blue);
+}
+
+.btn-success {
+    background-color: var(--success-green);
+    color: var(--white);
+}
+
+/* Cards (Doctors & Services) */
+.service-card, .doctor-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.service-card:hover, .doctor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.card-img, .doctor-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-content, .doctor-info {
+    padding: 25px;
+}
+
+/* Badges & Tags */
+.badge {
+    background: var(--soft-blue);
+    color: var(--primary-blue);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+/* Form Styling */
+.form-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--secondary-blue);
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    font-size: 1rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Hero Special Styling */
+.hero-diagnostics, .hero-doctors, .form-hero {
+    background: var(--secondary-blue);
+    color: var(--white);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-diagnostics h1, .form-hero h1 {
+    color: var(--white);
+    font-size: 3rem;
+}
+
+/* Sidebar Info (Appointment Page) */
+.booking-sidebar {
+    background: var(--soft-blue);
+    padding: 30px;
+    border-radius: var(--radius);
+}
+
+.benefit-list li {
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.benefit-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--success-green);
+    font-weight: bold;
+}/* Branding & Nav */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-name {
+    font-size: 1.2rem;
+    color: #0056b3;
+}
+
+.nav-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.phone-link {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #0056b3;
+    font-weight: bold;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.btn-primary {
+    background: #0056b3;
+    color: #fff;
+}
+
+.btn-lg {
+    padding: 15px 30px;
+    font-weight: bold;
+}
+
+.btn-outline {
+    border: 2px solid #0056b3;
+    color: #0056b3;
+    font-weight: bold;
+}
+
+.btn-white-pill {
+    background: white;
+    color: #0056b3;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Cards & Content */
+.service-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.service-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.view-all-link {
+    color: #0056b3;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid #0056b3;
+}
+
+.feature-item {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    display: flex;
+    gap: 20px;
+    align-items: start;
+}
+
+.round-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.footer-links a {
+    color: #bbb;
+    text-decoration: none;
+    margin: 0 10px;
+}/* ===== DEPARTMENT TAG ===== */
+.dept-tag {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* department colors */
+.internal { background: #e7f0ff; color: #0056b3; }
+.cardio   { background: #ffe7e7; color: #d32f2f; }
+.ortho    { background: #e7fff0; color: #2e7d32; }
+.pedia    { background: #fdf2e9; color: #d35400; }
+.derma    { background: #f5eef8; color: #8e44ad; }
+
+/* ===== QUALIFICATION TEXT ===== */
+.qual {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.qual.internal { color: #0056b3; }
+.qual.cardio   { color: #d32f2f; }
+.qual.ortho    { color: #2e7d32; }
+.qual.pedia    { color: #d35400; }
+.qual.derma    { color: #8e44ad; }
+
+/* ===== DIVIDER ===== */
+.doctor-content hr {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 20px 0;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+}
+
+.btn.internal { background: #0056b3; }
+.btn.cardio   { background: #d32f2f; }
+.btn.ortho    { background: #2e7d32; }
+.btn.pedia    { background: #d35400; }
+.btn.derma    { background: #8e44ad; }
