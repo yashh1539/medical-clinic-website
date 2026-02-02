@@ -79,11 +79,19 @@
 
 .hero-section {
     padding: 60px 5%;
-    text-align: center;
-    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), 
-                url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1500&q=80');
-    background-size: cover;
-    background-position: center;
+text-align: center;
+background:
+  linear-gradient(
+    rgba(255,255,255,0.55),
+    rgba(255,255,255,0.55)
+  ),
+  url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1500&q=80');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+color: #1f2937; /* dark slate */
+text-shadow: 0 2px 6px rgba(0,0,0,0.15);
+
 }
 
 .services-section {
