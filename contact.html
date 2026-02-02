@@ -41,7 +41,8 @@
       
       <div class="form-card">
         <h2 style="margin-bottom: 20px;">Send us a Message</h2>
-        <form action="#" class="appointment-form">
+        <form id="contactForm" class="appointment-form">
+
           <div class="form-group">
             <label>Your Name</label>
             <input type="text" placeholder="John Doe" required />
@@ -108,6 +109,30 @@
     </div>
   </div>
 </footer>
+<script type="module">
+import { db } from "./js/firebase.js";
+import { collection, addDoc, Timestamp }
+from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const form = e.target;
+
+  const data = {
+    name: form.querySelector("input[type=text]").value,
+    email: form.querySelector("input[type=email]").value,
+    subject: form.querySelector("select").value,
+    message: form.querySelector("textarea").value,
+    createdAt: Timestamp.now()
+  };
+
+  await addDoc(collection(db, "contacts"), data);
+
+  alert("📩 Message sent successfully!");
+  form.reset();
+});
+</script>
 
 </body>
 </html>

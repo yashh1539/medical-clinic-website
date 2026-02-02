@@ -59,7 +59,7 @@
 
       <!-- FORM CARD -->
       <section class="form-card">
-        <form action="#" method="post" class="appointment-form">
+          <form id="appointmentForm" class="appointment-form">
 
           <!-- PATIENT INFO -->
           <fieldset class="form-section">
@@ -210,6 +210,34 @@
     <a href="privacy.html">Privacy Policy</a>
   </div>
 </footer>
+<script type="module">
+import { db } from "./js/firebase.js";
+import { collection, addDoc, Timestamp }
+from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+document.getElementById("appointmentForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const form = e.target;
+
+  const appointmentData = {
+    name: form.name.value,
+    phone: form.phone.value,
+    email: form.email.value || "",
+    department: form.department.value,
+    doctor: form.doctor.value,
+    date: form.date.value,
+    timeSlot: form.time_slot.value,
+    message: form.message.value || "",
+    createdAt: Timestamp.now()
+  };
+
+  await addDoc(collection(db, "appointments"), appointmentData);
+
+  alert("✅ Appointment booked successfully!");
+  form.reset();
+});
+</script>
 
 </body>
 </html>
