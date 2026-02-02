@@ -41,36 +41,40 @@
       
       <div class="form-card">
         <h2 style="margin-bottom: 20px;">Send us a Message</h2>
-        <form id="contactForm" class="appointment-form">
+       <form id="contactForm" class="appointment-form">
 
-          <div class="form-group">
-            <label>Your Name</label>
-            <input type="text" placeholder="John Doe" required />
-          </div>
-          
-          <div class="form-row">
-            <div class="form-group">
-              <label>Email Address</label>
-              <input type="email" placeholder="john@example.com" required />
-            </div>
-            <div class="form-group">
-              <label>Subject</label>
-              <select>
-                <option>General Inquiry</option>
-                <option>Lab Report Issue</option>
-                <option>Feedback</option>
-                <option>Doctor Consultation</option>
-              </select>
-            </div>
-          </div>
+  <div class="form-group">
+    <label>Your Name</label>
+    <input type="text" name="name" placeholder="John Doe" required />
+  </div>
 
-          <div class="form-group">
-            <label>Message</label>
-            <textarea rows="5" placeholder="How can we help you today?"></textarea>
-          </div>
+  <div class="form-row">
+    <div class="form-group">
+      <label>Email Address</label>
+      <input type="email" name="email" placeholder="john@example.com" required />
+    </div>
+    <div class="form-group">
+      <label>Subject</label>
+      <select name="subject">
+        <option>General Inquiry</option>
+        <option>Lab Report Issue</option>
+        <option>Feedback</option>
+        <option>Doctor Consultation</option>
+      </select>
+    </div>
+  </div>
 
-          <button type="submit" class="btn btn-primary btn-large">Send Message</button>
-        </form>
+  <div class="form-group">
+    <label>Message</label>
+    <textarea name="message" rows="5"
+      placeholder="How can we help you today?"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-large">
+    Send Message
+  </button>
+</form>
+
       </div>
 
       <aside class="booking-sidebar">
@@ -111,26 +115,30 @@
 </footer>
 <script type="module">
 import { db } from "./js/firebase.js";
-import { collection, addDoc, Timestamp }
+import { collection, addDoc, Timestamp } 
 from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-document.getElementById("contactForm").addEventListener("submit", async (e) => {
+const contactForm = document.getElementById("contactForm");
+
+contactForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const form = e.target;
-
-  const data = {
-    name: form.querySelector("input[type=text]").value,
-    email: form.querySelector("input[type=email]").value,
-    subject: form.querySelector("select").value,
-    message: form.querySelector("textarea").value,
+  const contactData = {
+    name: contactForm.name.value,
+    email: contactForm.email.value,
+    subject: contactForm.subject.value,
+    message: contactForm.message.value,
     createdAt: Timestamp.now()
   };
 
-  await addDoc(collection(db, "contacts"), data);
-
-  alert("📩 Message sent successfully!");
-  form.reset();
+  try {
+    await addDoc(collection(db, "contacts"), contactData);
+    alert("📩 Message sent successfully!");
+    contactForm.reset();
+  } catch (error) {
+    console.error("Error saving contact message:", error);
+    alert("❌ Failed to send message. Please try again.");
+  }
 });
 </script>
 

@@ -212,32 +212,38 @@
 </footer>
 <script type="module">
 import { db } from "./js/firebase.js";
-import { collection, addDoc, Timestamp }
+import { collection, addDoc, Timestamp } 
 from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-document.getElementById("appointmentForm").addEventListener("submit", async (e) => {
+const appointmentForm = document.getElementById("appointmentForm");
+
+appointmentForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const form = e.target;
-
   const appointmentData = {
-    name: form.name.value,
-    phone: form.phone.value,
-    email: form.email.value || "",
-    department: form.department.value,
-    doctor: form.doctor.value,
-    date: form.date.value,
-    timeSlot: form.time_slot.value,
-    message: form.message.value || "",
+    name: appointmentForm.name.value,
+    phone: appointmentForm.phone.value,
+    email: appointmentForm.email.value || "",
+    department: appointmentForm.department.value,
+    doctor: appointmentForm.doctor.value,
+    date: appointmentForm.date.value,
+    timeSlot: appointmentForm.time_slot.value,
+    message: appointmentForm.message.value || "",
     createdAt: Timestamp.now()
   };
 
-  await addDoc(collection(db, "appointments"), appointmentData);
-
-  alert("✅ Appointment booked successfully!");
-  form.reset();
+  try {
+    await addDoc(collection(db, "appointments"), appointmentData);
+    alert("✅ Appointment booked successfully!");
+    appointmentForm.reset();
+  } catch (error) {
+    console.error("Error saving appointment:", error);
+    alert("❌ Failed to book appointment. Please try again.");
+  }
 });
 </script>
+
+
 
 </body>
 </html>
