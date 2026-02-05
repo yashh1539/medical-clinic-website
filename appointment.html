@@ -210,9 +210,8 @@
     <a href="privacy.html">Privacy Policy</a>
   </div>
 </footer>
-<script type="module">
-import { db } from "./js/firebase.js";
-import { collection, addDoc, Timestamp } 
+import { db } from "./firebase.js";
+import { collection, addDoc, Timestamp }
 from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const appointmentForm = document.getElementById("appointmentForm");
@@ -221,14 +220,14 @@ appointmentForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const appointmentData = {
-    name: appointmentForm.name.value,
-    phone: appointmentForm.phone.value,
-    email: appointmentForm.email.value || "",
-    department: appointmentForm.department.value,
-    doctor: appointmentForm.doctor.value,
-    date: appointmentForm.date.value,
-    timeSlot: appointmentForm.time_slot.value,
-    message: appointmentForm.message.value || "",
+    name: document.getElementById("a_name").value,
+    phone: document.getElementById("a_phone").value,
+    email: document.getElementById("a_email").value || "",
+    department: document.getElementById("a_department").value,
+    doctor: document.getElementById("a_doctor").value,
+    date: document.getElementById("a_date").value,
+    timeSlot: document.getElementById("a_time_slot").value,
+    message: document.getElementById("a_message").value || "",
     createdAt: Timestamp.now()
   };
 
@@ -241,7 +240,7 @@ appointmentForm.addEventListener("submit", async (e) => {
     alert("❌ Failed to book appointment. Please try again.");
   }
 });
-</script>
+
 
 
 
